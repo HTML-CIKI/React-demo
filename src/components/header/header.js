@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { Flex, WhiteSpace } from 'antd-mobile';
 
-import './index.less'
+import './header.less'
 
-class Header extends Comment{
+class Header extends Component{
   render () {
     return (
       <div className="header">
