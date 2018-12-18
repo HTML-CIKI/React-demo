@@ -1,5 +1,4 @@
 
-
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
@@ -22,6 +21,7 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const autoprefixer=require("autoprefixer")
+// const es3ifyPlugin = require('es3ify-webpack-plugin');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -224,11 +224,23 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      // 'react': 'anujs',
+      // 'react-dom': 'anujs',
+      // 若要兼容 IE 请使用以下配置
+      // 'react': 'anujs/dist/ReactIE',
+      // 'react-dom': 'anujs/dist/ReactIE',
+      // 如果引用了 prop-types 或 create-react-class
+      // 需要添加如下别名
+      // 'prop-types': 'anujs/lib/ReactPropTypes',
+      // 'create-react-class': 'anujs/lib/createClass',
+      //如果你在移动端用到了onTouchTap事件
+      // 'react-tap-event-plugin': 'anujs/lib/injectTapEventPlugin', 
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
       // guards against forgotten dependencies and such.
       PnpWebpackPlugin,
+      // new es3ifyPlugin(),
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,

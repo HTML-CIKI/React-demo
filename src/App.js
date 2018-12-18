@@ -1,5 +1,6 @@
+import "babel-polyfill";
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom' // BrowserRouter
 //  Route, Link, Switch
 import { renderRoutes } from 'react-router-config'
 import { hot } from 'react-hot-loader'
